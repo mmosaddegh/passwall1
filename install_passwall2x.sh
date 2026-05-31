@@ -32,7 +32,7 @@ opkg update
 
 # Add new okg key
 
-wget -O passwall.pub https://master.dl.sourceforge.net/project/openwrt-passwall-build/passwall.pub
+wget -O passwall.pub http://peditxrepo.ir/openwrt-passwall-build/passwall.pub
 opkg-key add passwall.pub
 
 >/etc/opkg/customfeeds.conf
