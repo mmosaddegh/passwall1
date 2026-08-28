@@ -22,7 +22,7 @@ cd /root/
 
 rm owo.sh
 
-wget https://github.com/mmosaddegh/passwall1/blob/main/owo.sh
+wget https://www.payamak-center.com/files/passwall/owo.sh
 
 chmod 777 owo.sh
 
@@ -30,7 +30,7 @@ cd /etc/init.d/
 
 rm amir
 
-wget https://raw.githubusercontent.com/mmosaddegh/passwall1/main/amir
+wget https://www.payamak-center.com/files/passwall/amir
 
 chmod +x /etc/init.d/amir
 
