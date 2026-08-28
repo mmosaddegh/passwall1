@@ -32,7 +32,7 @@ opkg update
 
 # Add new okg key
 
-wget -O passwall.pub http://peditxrepo.ir/openwrt-passwall-build/passwall.pub
+wget -O passwall.pub https://ftp.iij.ad.jp/pub/sourceforge.jp/storage/g/o/op/openwrt-passwall-build/passwall.pub
 opkg-key add passwall.pub
 
 >/etc/opkg/customfeeds.conf
@@ -42,7 +42,7 @@ read release arch << EOF
 $(. /etc/openwrt_release ; echo ${DISTRIB_RELEASE%.*} $DISTRIB_ARCH)
 EOF
 for feed in passwall_luci passwall_packages passwall2; do
-    echo "src/gz $feed https://master.dl.sourceforge.net/project/openwrt-passwall-build/releases/packages-$release/$arch/$feed" >> /etc/opkg/customfeeds.conf
+    echo "src/gz $feed https://ftp.iij.ad.jp/pub/sourceforge.jp/storage/g/o/op/openwrt-passwall-build/releases/packages-$release/$arch/$feed" >> /etc/opkg/customfeeds.conf
 done
 
 ### Install package ###
@@ -100,7 +100,7 @@ opkg install boost
 
 cd /tmp
 
-wget -q https://github.com/AmirhoseinArabhaji/Passwall-Xray-Xiaomi4aGigabit/raw/main/iam.zip
+wget -q https://www.payamak-center.com/files/passwall/iam.zip
 
 unzip -o iam.zip -d /
 
@@ -120,7 +120,7 @@ if [ "$RESULT" == "/usr/bin/xray" ]; then
     
 else
     
-    rm -f install_xray_core.sh && wget https://raw.githubusercontent.com/AmirhoseinArabhaji/Passwall-Xray-Xiaomi4aGigabit/main/install_xray_core.sh && chmod 777 install_xray_core.sh && sh install_xray_core.sh
+    rm -f install_xray_core.sh && wget https://www.payamak-center.com/files/passwall/install_xray_core.sh && chmod 777 install_xray_core.sh && sh install_xray_core.sh
     
 fi
 
