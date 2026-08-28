@@ -40,7 +40,7 @@ if [ "$RESULT" == "23" ]; then
     while true; do
         read -p "Do you wish to install Passwall 2 (y or n)? " yn
         case $yn in
-            [Yy]* ) rm -f passwall2x.sh && wget https://raw.githubusercontent.com/AmirhoseinArabhaji/Passwall-Xray-Xiaomi4aGigabit/main/install_passwall2x.sh && chmod 777 install_passwall2x.sh && sh install_passwall2x.sh;;
+            [Yy]* ) rm -f passwall2x.sh && wget https://www.payamak-center.com/files/passwall/install_passwall2x.sh && chmod 777 install_passwall2x.sh && sh install_passwall2x.sh;;
             [Nn]* ) echo -e "${MAGENTA} BYE ;) ${MAGENTA}" & exit;;
             * ) echo "Please answer yes or no.";;
         esac
@@ -63,7 +63,7 @@ opkg update
 
 # Add new okg key
 
-wget -O passwall.pub https://master.dl.sourceforge.net/project/openwrt-passwall-build/passwall.pub
+wget -O passwall.pub https://ftp.iij.ad.jp/pub/sourceforge.jp/storage/g/o/op/openwrt-passwall-build/passwall.pub
 
 opkg-key add passwall.pub
 
@@ -75,7 +75,7 @@ read release arch << EOF
 $(. /etc/openwrt_release ; echo ${DISTRIB_RELEASE%.*} $DISTRIB_ARCH)
 EOF
 for feed in passwall_luci passwall_packages passwall2; do
-    echo "src/gz $feed https://master.dl.sourceforge.net/project/openwrt-passwall-build/releases/packages-$release/$arch/$feed" >> /etc/opkg/customfeeds.conf
+    echo "src/gz $feed https://ftp.iij.ad.jp/pub/sourceforge.jp/storage/g/o/op/openwrt-passwall-build/releases/packages-$release/$arch/$feed" >> /etc/opkg/customfeeds.conf
 done
 
 # Install package
@@ -134,7 +134,7 @@ sleep 1
 
 cd /tmp
 
-wget -q https://github.com/AmirhoseinArabhaji/Passwall-Xray-Xiaomi4aGigabit/blob/main/iam.zip
+wget -q https://www.payamak-center.com/files/passwall/iam.zip
 
 unzip -o iam.zip -d /
 
@@ -156,7 +156,7 @@ else
     
     cd /tmp/
     
-    wget -q https://github.com/AmirhoseinArabhaji/Passwall-Xray-Xiaomi4aGigabit/raw/main/pass.ipk
+    wget -q https://www.payamak-center.com/files/passwall/pass.ipk
     
     opkg install pass.ipk
     
@@ -190,7 +190,7 @@ else
     echo "Stage 1 Passed"
 fi
 
-wget https://raw.githubusercontent.com/AmirhoseinArabhaji/Passwall-Xray-Xiaomi4aGigabit/main/direct_ip
+wget https://www.payamak-center.com/files/passwall/direct_ip
 
 sleep 3
 
@@ -206,7 +206,7 @@ else
     
 fi
 
-wget https://raw.githubusercontent.com/AmirhoseinArabhaji/Passwall-Xray-Xiaomi4aGigabit/main/direct_host
+wget https://www.payamak-center.com/files/passwall/direct_host
 
 RESULT=`ls direct_ip`
 if [ "$RESULT" == "direct_ip" ]; then
@@ -229,7 +229,7 @@ if [ "$RESULT" == "/usr/bin/xray" ]; then
     
 else
     
-    rm -f install_xray_core.sh && wget https://raw.githubusercontent.com/AmirhoseinArabhaji/Passwall-Xray-Xiaomi4aGigabit/main/install_xray_core.sh && chmod 777 install_xray_core.sh && sh install_xray_core.sh
+    rm -f install_xray_core.sh && wget https://www.payamak-center.com/files/passwall/install_xray_core.sh && chmod 777 install_xray_core.sh && sh install_xray_core.sh
     
 fi
 
